@@ -1,0 +1,5 @@
+- name: Ensure the jq is installed
+  apt:
+    name=jq
+    state=latest
+    update_cache=yes

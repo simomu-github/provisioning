@@ -1,0 +1,7 @@
+---
+
+- name: Ensure the direnv are installed
+  apt:
+    name=direnv
+    state=latest
+    update_cache=yes

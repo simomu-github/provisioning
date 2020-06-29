@@ -1,0 +1,5 @@
+- name: Ensure the ruby is installed
+  apt:
+    name=ruby
+    state=latest
+    update_cache=yes

@@ -1,0 +1,7 @@
+---
+
+- name: Ensure the tmux are installed
+  apt:
+    name=tmux
+    state=latest
+    update_cache=yes

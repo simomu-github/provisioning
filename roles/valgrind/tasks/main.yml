@@ -1,0 +1,7 @@
+---
+
+- name: Ensure the valgrind are installed
+  apt:
+    name=valgrind
+    state=latest
+    update_cache=yes

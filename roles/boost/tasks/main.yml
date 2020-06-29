@@ -1,0 +1,9 @@
+---
+
+- name: Ensure the boost lib are installed
+  apt:
+    name={{ item }}
+    state=latest
+    update_cache=yes
+  with_items:
+    - libboost-dev

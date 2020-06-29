@@ -1,0 +1,4 @@
+- name: Ensure the bundler is installed
+  gem:
+    name=bundler
+    state=latest

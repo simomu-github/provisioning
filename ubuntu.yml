@@ -1,0 +1,21 @@
+---
+
+- hosts: localhost
+  connection: local
+  become: yes
+
+  roles:
+    - { role: gcc }
+    - { role: cmake }
+    - { role: clang }
+    - { role: libcurl }
+    - { role: gdb }
+    - { role: valgrind }
+    - { role: tmux }
+    - { role: vim }
+    - { role: boost }
+    - { role: ruby }
+    - { role: bundler }
+    - { role: peco }
+    - { role: jq }
+    - { role: direnv }

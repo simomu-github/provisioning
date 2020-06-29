@@ -1,0 +1,7 @@
+---
+
+- name: Ensure the gdb are installed
+  apt:
+    name=gdb
+    state=latest
+    update_cache=yes
