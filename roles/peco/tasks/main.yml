@@ -1,35 +1,5 @@
----
-
-- name: Check peco installed
-  shell: "peco --version"
-  register: result
-  # check_mode: no
-  failed_when: no
-  changed_when: result.rc != 0
-
-- block:
-  - name: Download peco
-    get_url:
-      url="https://github.com/peco/peco/releases/download/v0.3.5/peco_linux_amd64.tar.gz"
-      dest=/tmp
-
-  - name: Unarchive peco
-    unarchive:
-      src=/tmp/peco_linux_amd64.tar.gz
-      dest=/tmp/
-      remote_src=yes
-
-  - name: mkdir .loacl/bin/
-    file:
-      path=/home/{{ user }}/.local/bin/
-      state=directory
-      owner={{ user }}
-
-  - name: copy peco
-    copy:
-      src=/tmp/peco_linux_amd64/peco
-      dest=/home/{{ user }}/.local/bin/peco
-      owner={{ user }}
-      mode=a+x
-
-  when: result is changed
+- name: Ensure the peco are installed
+  apt:
+    name: peco
+    state: latest
+    update_cache: yes

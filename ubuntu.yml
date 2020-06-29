@@ -3,6 +3,8 @@
 - hosts: localhost
   connection: local
   become: yes
+  vars:
+    user: "{{ lookup('env', 'USER') }}"
 
   roles:
     - { role: gcc }
