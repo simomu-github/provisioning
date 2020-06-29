@@ -17,6 +17,7 @@
     - { role: vim }
     - { role: boost }
     - { role: ruby }
+    - { role: rbenv }
     - { role: bundler }
     - { role: peco }
     - { role: jq }
