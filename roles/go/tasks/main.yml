@@ -1,0 +1,24 @@
+---
+
+- name: Check golang installed
+  shell: go version | cut -d ' ' -f 3
+  become_user: "{{ user }}"
+  register: result
+  failed_when: no
+  changed_when: result.stdout < golang.version
+
+- block:
+  - name: Download golang
+    get_url:
+      url: https://dl.google.com/go/{{ golang.version }}.linux-amd64.tar.gz
+      dest: /tmp
+
+  - name: Unarchive golang
+    unarchive:
+      src: /tmp/{{ golang.version }}.linux-amd64.tar.gz
+      dest: /home/{{ user }}/.local
+      remote_src: yes
+      owner: "{{ user }}"
+      group: "{{ user }}"
+
+  when: result is changed

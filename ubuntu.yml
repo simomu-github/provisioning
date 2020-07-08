@@ -22,4 +22,5 @@
     - { role: peco }
     - { role: jq }
     - { role: direnv }
+    - { role: go }
     - { role: dotfiles }
