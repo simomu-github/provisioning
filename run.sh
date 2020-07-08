@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 if !(type ansible > /dev/null 2>&1); then
 	sudo apt update -y
 	sudo apt install ansible -y
