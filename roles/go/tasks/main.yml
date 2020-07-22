@@ -13,6 +13,12 @@
       url: https://dl.google.com/go/{{ golang.version }}.linux-amd64.tar.gz
       dest: /tmp
 
+  - name: mkdir .loacl/bin/
+    file:
+      path=/home/{{ user }}/.local
+      state=directory
+      owner={{ user }}
+
   - name: Unarchive golang
     unarchive:
       src: /tmp/{{ golang.version }}.linux-amd64.tar.gz

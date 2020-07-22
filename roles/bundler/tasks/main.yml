@@ -1,4 +1,12 @@
+- name: Check gem installed
+  command: which gem
+  register: result
+  check_mode: no
+  changed_when: false
+  failed_when: false
+
 - name: Ensure the bundler is installed
   gem:
-    name=bundler
-    state=latest
+    name: bundler
+    state: latest
+  when: result.rc == 0
