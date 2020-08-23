@@ -9,4 +9,5 @@
   gem:
     name: bundler
     state: latest
+  become_user: "{{ user }}"
   when: result.rc == 0

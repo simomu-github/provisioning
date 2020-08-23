@@ -1,3 +1,12 @@
+- name: Install dependent package
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - zlib1g-dev
+    - build-essential
+    - libssl-dev
+
 - name: check rbenv
   stat:
     path: /home/{{ user }}/.rbenv
