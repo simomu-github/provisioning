@@ -24,3 +24,5 @@
     - { role: direnv }
     - { role: go }
     - { role: dotfiles }
+    - { role: docker }
+    - { role: docker-compose }
