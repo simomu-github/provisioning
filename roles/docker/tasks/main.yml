@@ -26,6 +26,7 @@
     name: docker-ce
     state: latest
     update_cache: yes
+  ignore_errors: '{{ ansible_check_mode  }}'
   tags: skip_test
 
 - name: Add user to docker group
@@ -39,4 +40,5 @@
     name: docker
     state: started
     enabled: yes
+  ignore_errors: '{{ ansible_check_mode  }}'
   tags: skip_test
