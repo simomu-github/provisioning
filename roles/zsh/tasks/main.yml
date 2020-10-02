@@ -1,0 +1,11 @@
+- name: Ensure the zsh is installed
+  apt:
+    name: zsh
+    state: latest
+    update_cache: yes
+
+- name: Change user shell to zsh
+  become: yes
+  user:
+    name: "{{ user }}"
+    shell: /usr/bin/zsh
