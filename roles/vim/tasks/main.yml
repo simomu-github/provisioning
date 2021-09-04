@@ -1,5 +1,9 @@
+- name: Add repository
+  apt_repository:
+    repo: "ppa:jonathonf/vim"
+
 - name: Ensure the vim are installed
   apt:
-    name=vim
-    state=latest
-    update_cache=yes
+    name: vim
+    state: latest
+    update_cache: yes
