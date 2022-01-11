@@ -1,0 +1,17 @@
+- name: check nodenv
+  stat:
+    path: /home/{{ user }}/.nodenv
+  register: repos
+
+- name: clone nodenv repository
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/nodenv/nodenv.git
+    dest: /home/{{ user }}/.nodenv
+    remote: origin
+  when: not repos.stat.exists
+
+- name: compile dynamic bash extension
+  command: cd /home/{{ user }}/.nodenv && ./src/configure && make -C src
+  become_user: "{{ user }}"
+  when: not repos.stat.exists

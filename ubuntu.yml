@@ -24,6 +24,7 @@
     - { role: jq }
     - { role: direnv }
     - { role: go }
+    - { role: nodenv }
     - { role: dotfiles }
     - { role: docker }
     - { role: docker-compose }
