@@ -15,6 +15,7 @@
   command: cd /home/{{ user }}/.nodenv && ./src/configure && make -C src
   become_user: "{{ user }}"
   when: not repos.stat.exists
+  tags: skip_test
 
 - name: mkdir redis data directory
   file:
