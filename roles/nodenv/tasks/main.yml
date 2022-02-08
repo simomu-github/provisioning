@@ -12,10 +12,11 @@
   when: not repos.stat.exists
 
 - name: compile dynamic bash extension
-  command: cd /home/{{ user }}/.nodenv && ./src/configure && make -C src
+  command: ./src/configure && make -C src
+  args:
+    chdir: /home/{{ user }}/.nodenv
   become_user: "{{ user }}"
   when: not repos.stat.exists
-  tags: skip_test
 
 - name: mkdir redis data directory
   file:
