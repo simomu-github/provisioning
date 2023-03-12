@@ -1,2 +1,2 @@
 golang:
-  version: "go1.17.6"
+  version: "go1.20.2"
