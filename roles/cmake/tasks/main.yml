@@ -2,8 +2,5 @@
 
 - name: Ensure the make and cmake are installed
   apt:
-    name={{ item }}
-    state=latest
-  with_items:
-    - make
-    - cmake
+    name: ['make', 'cmake']
+    state: latest

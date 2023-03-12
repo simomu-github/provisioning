@@ -5,15 +5,9 @@
 
 - name: Install basic list of packages
   apt:
-    name: "{{ item }}"
+    name: ['apt-transport-https', 'ca-certificates', 'curl', 'gnupg-agent', 'software-properties-common']
     state: present
     update_cache: yes
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - gnupg-agent
-    - software-properties-common
   tags: skip_test
 
 - name: Add repository

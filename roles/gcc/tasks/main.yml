@@ -2,8 +2,5 @@
 
 - name: Ensure the gcc and g++ compilers area installed
   apt:
-    name={{ item }}
-    state=latest
-  with_items:
-    - gcc
-    - g++
+    name: ['gcc', 'g++']
+    state: latest

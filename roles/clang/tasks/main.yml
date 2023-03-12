@@ -2,8 +2,6 @@
 
 - name: Ensure the clang format are installed
   apt:
-    name={{ item }}
-    state=latest
-    update_cache=yes
-  with_items:
-    - clang-format
+    name: clang-format
+    state: latest
+    update_cache: yes

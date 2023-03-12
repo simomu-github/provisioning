@@ -1,11 +1,7 @@
 - name: Install dependent package
   apt:
-    name: "{{ item }}"
+    name: ['zlib1g-dev', 'build-essential', 'libssl-dev']
     state: latest
-  with_items:
-    - zlib1g-dev
-    - build-essential
-    - libssl-dev
 
 - name: check rbenv
   stat:

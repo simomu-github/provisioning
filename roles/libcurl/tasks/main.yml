@@ -2,9 +2,6 @@
 
 - name: Ensure the libcurl4 are installed
   apt:
-    name={{ item }}
-    state=latest
-    update_cache=yes
-  with_items:
-    - curl
-    - libcurl4
+    name: ['curl', 'libcurl4']
+    state: latest
+    update_cache: yes

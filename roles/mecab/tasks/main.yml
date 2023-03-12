@@ -1,9 +1,5 @@
 - name: Ensure the mecab area installed
   apt:
-    name={{ item }}
-    state=latest
-    update_cache=yes
-  with_items:
-    - libmecab-dev
-    - mecab-ipadic
-    - mecab-ipadic-utf8
+    name: ['libmecab-dev', 'mecab-ipadic', 'mecab-ipadic-utf8']
+    state: latest
+    update_cache: yes
