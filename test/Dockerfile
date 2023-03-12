@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:latest
 
 RUN apt-get update -y \
     && apt-get install -y sudo git python-apt
