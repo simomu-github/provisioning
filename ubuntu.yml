@@ -27,4 +27,3 @@
     - { role: nodenv }
     - { role: dotfiles }
     - { role: docker }
-    - { role: docker-compose }
