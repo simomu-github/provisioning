@@ -16,7 +16,7 @@
   args:
     chdir: /home/{{ user }}/.nodenv
   become_user: "{{ user }}"
-  when: not repos.stat.exists
+  when: repos.stat.exists
 
 - name: mkdir redis data directory
   file:
