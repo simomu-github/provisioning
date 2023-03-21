@@ -1,3 +1,9 @@
+- name: Install dependency
+  apt:
+    name: gnupg
+    state: latest
+    update_cache: yes
+
 - name: Add repository
   apt_repository:
     repo: "ppa:jonathonf/vim"
